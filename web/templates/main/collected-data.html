@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+
+{% endblock %}
+{% block content %}
+<div class="container mt-4" style="overflow-y: scroll; max-height: 70%;">
+    <div class="h-100 row align-items-center text-center">
+        <table class="table bg-white text-center">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Question</th>
+                    <th scope="col">Answer</th>
+                    <th scope="col">tags</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for q in questions %}
+                <tr>
+                    <th scope="row">{{q.id}}</th>
+                    <td>{{q.question}}</td>
+                    <td>{{q.answer}}</td>
+                    <td>{{q.tags_as_str}} </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
